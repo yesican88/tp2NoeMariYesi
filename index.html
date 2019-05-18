@@ -9,14 +9,16 @@
     <script src="script.js" type="text/javascript"></script>
     <title>To-do List</title>
 </head>
-<body>
+<body onload="printTasks()">
     <div class="app-container">
         <header>
             <input id="taskInput" type="text" value="" placeholder="Ingrese una tarea..." onkeypress="handleKeyPress(event)">
             <a href="#" class="add-btn" onclick="addComment()"><img src="assets/add_icon.svg" class="add-icon"></a>
         </header>
         <div>
+            <ul id="taskList">
 
+            </ul>
         </div>
     </div>
 </body>

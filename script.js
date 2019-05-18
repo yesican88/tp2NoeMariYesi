@@ -1,12 +1,40 @@
-// ENTER ENVIA NUEVA TAREA A LA LISTA
+var input
+var newTask
+var taskList
+var allTasks = [
+    {text: 'tarea de ejemplo', isCompleted: false},
+]
 
-var handleKeyPress = function(event){
-    if(event.code === 'Enter'){
-        console.log('aca hay que poner que mande el mensaje al ul')
+// CODIGO PARA CAPTURAR EL INPUT Y AGREGARLO ABAJO
+
+var printTasks = function(){
+    taskList = document.getElementById('taskList')
+    taskList.innerHTML = ''
+    allTasks.map(function(task){
+      var taskItem = document.createElement('li')
+      taskItem.classList.add('task')
+      taskItem.innerText = task.text    
+      taskList.appendChild(taskItem)
+    })
+  }
+
+var addComment = function () {
+    input = document.getElementById('taskInput');
+    newTask = input.value;
+
+    if (input) {
+        input.value = '';
+        allTasks.unshift({
+            text: newTask,
+            isCompleted: false
+        })
+        console.log(allTasks)
+        printTasks()
     }
 }
 
-// ENTER CUANDO EL INPUT ESTA VACIO NO ENVIA NADA A LA LISTA
-if(input){ //lo interpreta como true cuando hay texto dentro de input
-//aca va el codigo de creacion de la nueva tarea
+var handleKeyPress = function (event) {
+    if (event.code === 'Enter') {
+        addComment()
+    }
 }
