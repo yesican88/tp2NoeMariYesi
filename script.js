@@ -4,8 +4,20 @@ var taskList
 var taskCompleted
 var taskItem
 var allTasks = [
-   {text: "algo", isPending: true},
+   {text: "primera tarea", isPending: true},
   ]
+
+
+
+//FUNCION DE TOGGLE PENDIENTE A COMPLETADA
+var toggleTask = function(button){
+  console.log(button.id)
+  allTasks[button.id].isPending = !allTasks[button.id].isPending
+
+  console.log(allTasks[button.id].isPending)
+  printTasks()
+
+}
 
 
 // CODIGO PARA CAPTURAR EL INPUT Y AGREGARLO ABAJO
@@ -23,7 +35,13 @@ var printTasks = function(){
       } else {
         taskCompleted.appendChild(taskItem)
       }
-      
+
+//AGREGA BTN DE TAREA COMPLETADA
+      var completeBtn = document.createElement('button')
+        completeBtn.innerText = 'Completada'
+        completeBtn.id = index
+        completeBtn.onclick = function(){ toggleTask(this) }
+        taskItem.appendChild(completeBtn)
     })
 
   }
@@ -49,11 +67,7 @@ var handleKeyPress = function (event) {
     }
 }
 
-var itemBtn = document.createElement('button')
-itemBtn.innerText = 'toggle'
-itemBtn.onclick = function(){ toggleTask('this') }
-itemBtn.id = index
-taskItem.appendChild(itemBtn)
+
 
 
 
