@@ -26,6 +26,7 @@ var printTasks = function(){
     taskList = document.getElementById('taskList')
     taskList.innerHTML = ''
     taskCompleted = document.getElementById('taskCompleted')
+    taskCompleted.innerHTML = ''
     allTasks.map(function(task, index){
       var taskItem = document.createElement('li')
       taskList.classList.add('task')
