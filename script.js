@@ -1,21 +1,31 @@
 var input
-var newTask
+var newTask 
 var taskList
+var taskCompleted
+var taskItem
 var allTasks = [
-    {text: 'tarea de ejemplo', isCompleted: false},
-]
+   {text: "algo", isPending: true},
+  ]
+
 
 // CODIGO PARA CAPTURAR EL INPUT Y AGREGARLO ABAJO
 
 var printTasks = function(){
     taskList = document.getElementById('taskList')
     taskList.innerHTML = ''
+    taskCompleted = document.getElementById('taskCompleted')
     allTasks.map(function(task){
       var taskItem = document.createElement('li')
-      taskItem.classList.add('task')
-      taskItem.innerText = task.text    
-      taskList.appendChild(taskItem)
+      taskList.classList.add('task')
+      taskItem.innerText = task.text  
+      if (task.isPending)  {
+        taskList.appendChild(taskItem)  
+      } else {
+        taskCompleted.appendChild(taskItem)
+      }
+      
     })
+
   }
 
 var addComment = function () {
@@ -26,7 +36,7 @@ var addComment = function () {
         input.value = '';
         allTasks.unshift({
             text: newTask,
-            isCompleted: false
+            isPending: true
         })
         console.log(allTasks)
         printTasks()
@@ -38,3 +48,13 @@ var handleKeyPress = function (event) {
         addComment()
     }
 }
+
+var itemBtn = document.createElement('button')
+itemBtn.innerText = 'toggle'
+itemBtn.onclick = function(){ toggleTask('this') }
+taskItem.appendChild(itemBtn)
+
+
+
+
+
