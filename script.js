@@ -14,7 +14,7 @@ var printTasks = function(){
     taskList = document.getElementById('taskList')
     taskList.innerHTML = ''
     taskCompleted = document.getElementById('taskCompleted')
-    allTasks.map(function(task){
+    allTasks.map(function(task, index){
       var taskItem = document.createElement('li')
       taskList.classList.add('task')
       taskItem.innerText = task.text  
@@ -52,6 +52,7 @@ var handleKeyPress = function (event) {
 var itemBtn = document.createElement('button')
 itemBtn.innerText = 'toggle'
 itemBtn.onclick = function(){ toggleTask('this') }
+itemBtn.id = index
 taskItem.appendChild(itemBtn)
 
 
