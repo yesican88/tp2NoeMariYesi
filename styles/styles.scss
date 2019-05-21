@@ -16,7 +16,25 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
+    list-style: none;
+}
+
+$color-pink: #BC3B69;
+
+@mixin buttons {
+    width: 50px;
+    height: 50px;
+    background:#fff;
+    border-radius: 50%;
+    float: right;
+    position: absolute;
+    top: 16px;
+    right: 14px;
+    z-index: 2;
+    &:hover{
+        fill:$color-pink;
+    }
 }
 
 body {
@@ -40,7 +58,7 @@ body {
 
 header {
     height: 54px;
-    background: #BC3B69;
+    background: $color-pink;
     padding: 15px;
     border-radius: 10px;
     overflow: hidden;
@@ -61,16 +79,7 @@ header {
     }
 
     .add-btn {
-        width: 50px;
-        height: 50px;
-        background:#fff;
-        border-radius: 50%;
-        float: right;
-        position: absolute;
-        top: 16px;
-        right: 14px;
-        z-index: 2;
-
+        @include buttons;
         .add-icon {
             width: 16px;
             position: absolute;
@@ -83,3 +92,20 @@ header {
 // ^ESTILOS DEL HEADER^
 
 //^ESTILOS DEL INPUT^
+
+.complete{
+    @include buttons;
+    }
+.delete{
+    @include buttons;
+    }
+
+.notice{
+    margin: 30px auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #aaa;      
+}

@@ -29,6 +29,8 @@ var printTasks = function(){
     taskCompleted.innerHTML = ''
     allTasks.map(function(task, index){
       var taskItem = document.createElement('li')
+      var buttons = document.createElement('div')
+      buttons.classList.add('buttons')
       taskList.classList.add('task')
       taskItem.innerText = task.text  
       if (task.isPending)  {
@@ -38,13 +40,24 @@ var printTasks = function(){
       }
 
 //AGREGA BTN DE TAREA COMPLETADA
-      var completeBtn = document.createElement('button')
-        completeBtn.innerText = 'Completada'
+      var completeBtn = document.createElement('a')
+        completeBtn.innerText = 'Complete'
         completeBtn.id = index
+        completeBtn.href ='#'
+        completeBtn.classList.add('complete')
+        //completeBtn.innerHTML = completeSVG
         completeBtn.onclick = function(){ toggleTask(this) }
         taskItem.appendChild(completeBtn)
+        //AGREGA BTN BORRAR TAREA
+        var deleteBtn = document.createElement('a')
+        deleteBtn.innerText = 'Delete'
+        deleteBtn.href ='#'
+        deleteBtn.classList.add('delete')
+        //deleteBtn.innerHTML = removeSVG
+        console.log(deleteBtn)
+        deleteBtn.onclick = function (){deleteTask(this)}
+        taskItem.appendChild(deleteBtn)
     })
-
   }
 
 var addComment = function () {
@@ -68,6 +81,11 @@ var handleKeyPress = function (event) {
     }
 }
 
+var deleteTask = function(btn){
+  console.log (btn)
+  allTasks.splice (btn.id, 1)
+  printTasks()
+}
 
 
 
