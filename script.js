@@ -41,7 +41,7 @@ var printTasks = function(){
 
 //AGREGA BTN DE TAREA COMPLETADA
       var completeBtn = document.createElement('a')
-        completeBtn.innerText = 'Complete'
+        //completeBtn.innerText = 'Complete'
         completeBtn.id = index
         completeBtn.href ='#'
         completeBtn.classList.add('complete')
@@ -50,7 +50,8 @@ var printTasks = function(){
         taskItem.appendChild(completeBtn)
         //AGREGA BTN BORRAR TAREA
         var deleteBtn = document.createElement('a')
-        deleteBtn.innerText = 'Delete'
+        //deleteBtn.innerText = 'Delete'
+        deleteBtn.id = index
         deleteBtn.href ='#'
         deleteBtn.classList.add('delete')
         //deleteBtn.innerHTML = removeSVG
