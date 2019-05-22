@@ -15,12 +15,16 @@
             <input id="taskInput" type="text" value="" placeholder="Ingrese una tarea..." onkeypress="handleKeyPress(event)">
             <a href="#" class="add-btn" onclick="addComment()"><img src="assets/add_icon.svg" class="add-icon"></a>
         </header>
-        <div>
-            <ul id="taskList">
-
+        <div class="toDo">
+            <p class="notice">¡No tienes tareas pendientes!</p>
+            <ul  id="taskList">
+                   
+            </ul> 
+            <p class="notice">Todavía no completaste ninguna tarea.</p>
+            <ul id="taskCompleted">
+                
             </ul>
         </div>
     </div>
 </body>
-
 </html>
