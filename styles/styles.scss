@@ -96,7 +96,7 @@ header {
 .complete{
     @include buttons;
     border-radius: 5px;
-    background-image: url(done_icon.svg);
+    background-image: url('../assets/done_icon.svg');
     }
 .delete{
     @include buttons;

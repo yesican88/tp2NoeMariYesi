@@ -3,9 +3,7 @@ var newTask
 var taskList
 var taskCompleted
 var taskItem
-var allTasks = [
-   {text: "primera tarea", isPending: true},
-  ]
+var allTasks = [  ]
 
 
 
@@ -31,7 +29,7 @@ var printTasks = function(){
       var taskItem = document.createElement('li')
       var buttons = document.createElement('div')
       buttons.classList.add('buttons')
-      taskList.classList.add('task')
+      taskItem.classList.add('task')
       taskItem.innerText = task.text  
       if (task.isPending)  {
         taskList.appendChild(taskItem)  
@@ -45,7 +43,6 @@ var printTasks = function(){
         completeBtn.id = index
         completeBtn.href ='#'
         completeBtn.classList.add('complete')
-        //completeBtn.innerHTML = completeSVG
         completeBtn.onclick = function(){ toggleTask(this) }
         taskItem.appendChild(completeBtn)
         //AGREGA BTN BORRAR TAREA
@@ -54,11 +51,19 @@ var printTasks = function(){
         deleteBtn.id = index
         deleteBtn.href ='#'
         deleteBtn.classList.add('delete')
-        //deleteBtn.innerHTML = removeSVG
         console.log(deleteBtn)
         deleteBtn.onclick = function (){deleteTask(this)}
         taskItem.appendChild(deleteBtn)
+        
+        var icon = document.createElement('svg')
+        task.appendChild
+        //icon.innerHTML = svg
+        console.log (icon)
     })
+
+    if (taskList.length > 0){
+      //no mostrar el mensaje
+    }
   }
 
 var addComment = function () {

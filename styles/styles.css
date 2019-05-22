@@ -93,7 +93,7 @@ header .add-btn .add-icon {
   right: 14px;
   z-index: 2;
   border-radius: 5px;
-  background-image: url(done_icon.svg);
+  background-image: url("../assets/done_icon.svg");
 }
 
 .complete:hover {
