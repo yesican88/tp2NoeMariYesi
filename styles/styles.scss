@@ -92,11 +92,15 @@ header {
 // ^ESTILOS DEL HEADER^
 
 //^ESTILOS DEL INPUT^
-
+a{
+    width: 70px;
+}
 .complete{
     @include buttons;
     border-radius: 5px;
     background-image: url('../assets/done_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
     }
 .delete{
     @include buttons;
