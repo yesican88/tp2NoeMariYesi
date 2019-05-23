@@ -63,6 +63,7 @@ var printTasks = function(){
 
     if (taskList.length > 0){
       //no mostrar el mensaje
+      //clase
     }
   }
 
