@@ -65,9 +65,19 @@ var printTasks = function () {
     console.log(icon)
   })
 
-  if (taskList.length > 0) {
-    //no mostrar el mensaje
-  }
+  var lista = document.getElementById('taskList')
+console.log(lista);
+
+if(lista.children.length > 0) {
+  var zeroTasks = document.getElementById('zeroTasks')
+  zeroTasks.classList.add('removeNotice')
+}
+
+var taskCompleted = document.getElementById('taskCompleted')
+if (taskCompleted.children.length > 0) {
+  var manyTasks = document.getElementById('manyTasks')
+  manyTasks.classList.add('removeNotice')
+}
 }
 
 var addComment = function () {
@@ -98,16 +108,3 @@ var deleteTask = function (btn) {
 }
 
 // debugger
-var lista = document.getElementById('taskList')
-console.log(lista);
-
-if(lista.children.length > 0) {
-  var zeroTasks = document.getElementById('zeroTasks')
-  zeroTasks.classList.add('removeNotice')
-}
-
-var taskCompleted = document.getElementById('taskCompleted')
-if (taskCompleted.children.length > 0) {
-  var manyTasks = document.getElementById('manyTasks')
-  manyTasks.classList.add('removeNotice')
-}
