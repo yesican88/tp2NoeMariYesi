@@ -26,13 +26,14 @@ $color-pink: #BC3B69;
     width: 50px;
     height: 50px;
     background:#fff;
-    border-radius: 50%;
     float: right;
     top: 16px;
     right: 14px;
     z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center center;
     &:hover{
-        fill:$color-pink;
+        transition: $color-pink;
     }
 }
 
@@ -79,6 +80,7 @@ header {
 
     .add-btn {
         @include buttons;
+        border-radius: 50%;
         position: absolute;
         .add-icon {
             width: 16px;
@@ -92,19 +94,19 @@ header {
 // ^ESTILOS DEL HEADER^
 
 //^ESTILOS DEL INPUT^
-a{
-    width: 70px;
-}
+
 .complete{
     @include buttons;
-    border-radius: 5px;
+    border-radius: 5px solid $color-pink;
     background-image: url('../assets/done_icon.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
+
     }
 .delete{
     @include buttons;
-    border-radius: 5px;
+    background-image: url('../assets/remove_icon.svg');
+    &:hover{
+        color: $color-pink;
+        }
     }
 
 .notice{

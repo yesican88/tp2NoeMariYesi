@@ -54,17 +54,9 @@ var printTasks = function(){
         console.log(deleteBtn)
         deleteBtn.onclick = function (){deleteTask(this)}
         taskItem.appendChild(deleteBtn)
-        
-        var icon = document.createElement('svg')
-        task.appendChild
-        //icon.innerHTML = svg
-        console.log (icon)
     })
 
-    if (taskList.length > 0){
-      //no mostrar el mensaje
-      //clase
-    }
+  
   }
 
 var addComment = function () {
