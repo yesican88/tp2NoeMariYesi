@@ -21,7 +21,7 @@ time, mark, audio, video {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: #edf0f1;
 }
 
@@ -44,7 +44,6 @@ header {
   border-radius: 10px;
   overflow: hidden;
 }
-
 header input {
   width: 100%;
   height: 50px;
@@ -59,7 +58,6 @@ header input {
   float: left;
   text-indent: 15px;
 }
-
 header .add-btn {
   width: 50px;
   height: 50px;
@@ -73,12 +71,9 @@ header .add-btn {
   border-radius: 50%;
   position: absolute;
 }
-
 header .add-btn:hover {
-  -webkit-transition: #BC3B69;
   transition: #BC3B69;
 }
-
 header .add-btn .add-icon {
   width: 16px;
   position: absolute;
@@ -99,9 +94,7 @@ header .add-btn .add-icon {
   border-radius: 5px solid #BC3B69;
   background-image: url("../assets/done_icon.svg");
 }
-
 .complete:hover {
-  -webkit-transition: #BC3B69;
   transition: #BC3B69;
 }
 
@@ -117,12 +110,9 @@ header .add-btn .add-icon {
   background-position: center center;
   background-image: url("../assets/remove_icon.svg");
 }
-
 .delete:hover {
-  -webkit-transition: #BC3B69;
   transition: #BC3B69;
 }
-
 .delete:hover {
   color: #BC3B69;
 }
@@ -132,7 +122,7 @@ header .add-btn .add-icon {
   width: 100%;
   display: block;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   color: #aaa;
 }
@@ -148,10 +138,10 @@ header .add-btn .add-icon {
   background: #fff;
   border-radius: 5px;
   position: relative;
-  -webkit-box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
-          box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
   margin: 0 0 10px 0;
   padding: 10px 0px;
   text-indent: 15px;
 }
+
 /*# sourceMappingURL=styles.css.map */
