@@ -67,12 +67,9 @@ header .add-btn {
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   border-radius: 50%;
   position: absolute;
-}
-header .add-btn:hover {
-  transition: #BC3B69;
 }
 header .add-btn .add-icon {
   width: 16px;
@@ -90,12 +87,11 @@ header .add-btn .add-icon {
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
-  background-position: center center;
-  border-radius: 5px solid #BC3B69;
-  background-image: url("../assets/done_icon.svg");
+  background-position: center;
+  background-image: url("../assets/done_icon_white.svg");
 }
 .complete:hover {
-  transition: #BC3B69;
+  background-image: url("../assets/done_icon.svg");
 }
 
 .delete {
@@ -107,14 +103,11 @@ header .add-btn .add-icon {
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-image: url("../assets/remove_icon.svg");
 }
 .delete:hover {
-  transition: #BC3B69;
-}
-.delete:hover {
-  color: #BC3B69;
+  background-image: url("../assets/remove_icon_hover.svg");
 }
 
 .notice {
@@ -130,7 +123,6 @@ header .add-btn .add-icon {
 .task {
   width: 100%;
   min-height: 50px;
-  float: left;
   font-size: 14px;
   font-weight: 500;
   color: #444;

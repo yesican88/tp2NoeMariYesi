@@ -31,8 +31,7 @@ var printTasks = function () {
   pendingTasks.innerHTML = ''
   completedTasks = document.getElementById('completedTasks')
   completedTasks.innerHTML = ''
-
-  allTasks.map(function (task) {
+  allTasks.map(function (task, index) {
     var taskItem = document.createElement('li')
     var buttons = document.createElement('div')
     buttons.classList.add('buttons')
@@ -43,38 +42,30 @@ var printTasks = function () {
     } else {
       completedTasks.appendChild(taskItem)
     }
+
+    // AGREGAR BOTONES
+    var completeBtn = document.createElement('a')
+    completeBtn.id = index
+    completeBtn.href = '#'
+    completeBtn.classList.add('complete')
+    completeBtn.onclick = function () {
+      toggleTask(this)
+    }
+    taskItem.appendChild(completeBtn)
+
+    var deleteBtn = document.createElement('a')
+    deleteBtn.id = index
+    deleteBtn.href = '#'
+    deleteBtn.classList.add('delete')
+    console.log(deleteBtn)
+    deleteBtn.onclick = function () {
+      deleteTask(this)
+    }
+    taskItem.appendChild(deleteBtn)
   })
-  addButtons()
 }
 
-// AGREGAR BOTONES
-var addButtons = function (index) {
-  var taskItem = document.createElement('li')
-  var deleteBtn = document.createElement('a')
-  //deleteBtn.innerText = 'Delete'
-  deleteBtn.id = index
-  deleteBtn.href = '#'
-  deleteBtn.classList.add('delete')
-  deleteBtn.onclick = function () {
-    deleteTask(this)
-  }
-  taskItem.appendChild(deleteBtn)
-
-  //AGREGA BTN DE TAREA COMPLETADA
-  var completeBtn = document.createElement('a')
-  //completeBtn.innerText = 'Complete'
-  completeBtn.id = index
-  completeBtn.href = '#'
-  completeBtn.classList.add('complete')
-  completeBtn.onclick = function () {
-    toggleTask(this)
-  }
-  taskItem.appendChild(completeBtn)
-}
-
-
-
-//FUNCION DE TOGGLE PENDIENTE A COMPLETADA
+// TOGGLE PENDIENTE A COMPLETADA
 var toggleTask = function (button) {
   allTasks[button.id].isPending = !allTasks[button.id].isPending
   printTasks()
