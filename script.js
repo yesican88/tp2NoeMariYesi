@@ -97,15 +97,17 @@ var deleteTask = function (btn) {
   printTasks()
 }
 
-var removeNotice = function () {
-  var taskCompleted = document.getElementById('taskCompleted')
-  if (taskCompleted.length > 0) {
-    var manyTasks = document.getElementById('manyTasks')
-    manyTasks.classList.add('remove')
-  }
+// debugger
+var lista = document.getElementById('taskList')
+console.log(lista);
 
-  if(taskList.length > 0) {
-    var zeroTasks = document.getElementById('zeroTasks')
-    zeroTasks.classList.add('remove')
-  }
+if(lista.children.length > 0) {
+  var zeroTasks = document.getElementById('zeroTasks')
+  zeroTasks.classList.add('removeNotice')
+}
+
+var taskCompleted = document.getElementById('taskCompleted')
+if (taskCompleted.children.length > 0) {
+  var manyTasks = document.getElementById('manyTasks')
+  manyTasks.classList.add('removeNotice')
 }
