@@ -63,6 +63,19 @@ var printTasks = function () {
     }
     taskItem.appendChild(deleteBtn)
   })
+  var lista = document.getElementById('pendingTasks')
+  console.log(lista);
+
+  if(lista.children.length > 0) {
+    var zeroTasks = document.getElementById('zeroTasks')
+    zeroTasks.classList.add('removeNotice')
+  }
+
+  var taskCompleted = document.getElementById('taskCompleted')
+  if (taskCompleted.children.length > 0) {
+    var manyTasks = document.getElementById('manyTasks')
+    manyTasks.classList.add('removeNotice')
+  }
 }
 
 // TOGGLE PENDIENTE A COMPLETADA

@@ -21,7 +21,7 @@ time, mark, audio, video {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: #edf0f1;
 }
 
@@ -44,6 +44,7 @@ header {
   border-radius: 10px;
   overflow: hidden;
 }
+
 header input {
   width: 100%;
   height: 50px;
@@ -58,10 +59,11 @@ header input {
   float: left;
   text-indent: 15px;
 }
+
 header .add-btn {
   width: 50px;
   height: 50px;
-  background: #fff;
+  /*background: #fff;*/
   float: right;
   top: 16px;
   right: 14px;
@@ -70,7 +72,9 @@ header .add-btn {
   background-position: center;
   border-radius: 50%;
   position: absolute;
+  background-color: #fff;
 }
+
 header .add-btn .add-icon {
   width: 16px;
   position: absolute;
@@ -81,23 +85,54 @@ header .add-btn .add-icon {
 .complete {
   width: 50px;
   height: 50px;
-  background: #fff;
+  /*background: #fff;*/
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../assets/done_icon_white.svg");
-}
-.complete:hover {
   background-image: url("../assets/done_icon.svg");
+  border: 1.5px solid #BC3B69;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.complete:hover {
+  background-image: url("../assets/done_icon_white.svg");
+  width: 50px;
+  height: 50px;
+  /*background: #fff;*/
+  float: right;
+  top: 16px;
+  right: 14px;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+  background-color: #BC3B69;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  margin-right: 8px;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 .delete {
   width: 50px;
   height: 50px;
-  background: #fff;
+  /*background: #fff;*/
   float: right;
   top: 16px;
   right: 14px;
@@ -106,6 +141,7 @@ header .add-btn .add-icon {
   background-position: center;
   background-image: url("../assets/remove_icon.svg");
 }
+
 .delete:hover {
   background-image: url("../assets/remove_icon_hover.svg");
 }
@@ -115,7 +151,7 @@ header .add-btn .add-icon {
   width: 100%;
   display: block;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   color: #aaa;
 }
@@ -130,10 +166,10 @@ header .add-btn .add-icon {
   background: #fff;
   border-radius: 5px;
   position: relative;
-  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
+  -webkit-box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
+          box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
   margin: 0 0 10px 0;
   padding: 10px 0px;
   text-indent: 15px;
 }
-
 /*# sourceMappingURL=styles.css.map */
