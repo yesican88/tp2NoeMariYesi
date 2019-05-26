@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="script.js" type="text/javascript"></script>
     <title>To-do List</title>
 </head>
+
 <body onload="printTasks()">
     <div class="app-container">
         <header>
@@ -16,16 +18,22 @@
                 onkeypress="handleKeyPress(event)">
             <a href="#" class="add-btn" onclick="addTask()"><img src="assets/add_icon.svg" class="add-icon"></a>
         </header>
-        <div>
-            <p class="notice" id="zeroTasks">¡No tienes tareas pendientes!</p>
-            <ul id="pendingTasks">
+        <section>
+            <div>
+                <p class="notice" id="zeroTasks">¡No tienes tareas pendientes!</p>
+                <ul id="pendingTasks">
 
-            </ul>
-            <p class="notice" id="manyTasks">Todavía no completaste ninguna tarea.</p>
-            <ul id="completedTasks">
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <p class="notice" id="manyTasks">Todavía no completaste ninguna tarea.</p>
+                <ul id="completedTasks">
 
-            </ul>
+                </ul>
+            </section>
         </div>
     </div>
 </body>
+
 </html>

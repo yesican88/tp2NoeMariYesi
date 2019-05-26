@@ -52,6 +52,7 @@ body {
     width: 75%;
     height: 90%;
     max-width: 600px;
+    min-width: 420px;
     margin: auto;
     position: absolute;
     top: 0;
@@ -66,6 +67,7 @@ header {
     padding: 15px;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 20px;
 
     input {
         width: 100%;
@@ -97,11 +99,21 @@ header {
     }
 }
 
+hr {
+    height: 1px;
+    width: 50%;
+    color: #d8e5e0;
+    background-color: #d8e5e0;
+    border: none;
+    margin: 30px auto;
+}
+
 .complete {
     @include buttons;
     @include completeBtn;
     background-image: url('../assets/done_icon.svg');
     border: 1.5px solid #BC3B69;
+    margin: 10px 15px 10px 15px;
 
     &:hover {
         background-image: url('../assets/done_icon_white.svg');
@@ -116,6 +128,7 @@ header {
 .delete {
     @include buttons;
     background-image: url('../assets/remove_icon.svg');
+    border-right: solid 1px #d8e5e0;
 
     &:hover {
         background-image: url('../assets/remove_icon_hover.svg');
@@ -123,7 +136,7 @@ header {
 }
 
 .notice {
-    margin: 30px auto;
+    margin-top: 30px;
     width: 100%;
     display: block;
     text-align: center;
@@ -136,9 +149,7 @@ header {
     width: 100%;
     min-height: 50px;
     font-size: 14px;
-    font-weight: 500;
-    color: #444;
-    line-height: 22px;
+    line-height: 50px;
     background: #fff;
     border-radius: 5px;
     position: relative;
@@ -150,4 +161,8 @@ header {
 
 .removeNotice {
     display: none;
+}
+
+#pendingTasks, #completedTasks {
+    overflow: hidden;
 }
