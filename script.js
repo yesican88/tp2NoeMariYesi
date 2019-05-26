@@ -9,7 +9,7 @@ var addTask = function () {
   input = document.getElementById('taskInput')
   newTask = input.value
 
-  if (input) { // DEJA AGREGAR TAREAS CUANDO INPUT ESTA VACIO!!
+  if (input.value !== "") {
     input.value = ''
     allTasks.unshift({
       text: newTask,
@@ -57,24 +57,26 @@ var printTasks = function () {
     deleteBtn.id = index
     deleteBtn.href = '#'
     deleteBtn.classList.add('delete')
-    console.log(deleteBtn)
     deleteBtn.onclick = function () {
       deleteTask(this)
     }
     taskItem.appendChild(deleteBtn)
   })
-  var lista = document.getElementById('pendingTasks')
-  console.log(lista);
 
-  if(lista.children.length > 0) {
+  if(pendingTasks.children.length > 0) {
     var zeroTasks = document.getElementById('zeroTasks')
     zeroTasks.classList.add('removeNotice')
+  } else if (pendingTasks.children.length === 0){
+    var zeroTasks = document.getElementById('zeroTasks')
+    zeroTasks.classList.remove('removeNotice')
   }
 
-  var taskCompleted = document.getElementById('taskCompleted')
-  if (taskCompleted.children.length > 0) {
+  if (completedTasks.children.length > 0) {
     var manyTasks = document.getElementById('manyTasks')
     manyTasks.classList.add('removeNotice')
+  } else if (completedTasks.children.length === 0) {
+    var manyTasks = document.getElementById('manyTasks')
+    manyTasks.classList.remove('removeNotice')
   }
 }
 
