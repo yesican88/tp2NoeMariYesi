@@ -58,7 +58,8 @@ header input {
   font-size: 15px;
   color: #fff;
   float: left;
-  text-indent: 15px;
+  box-sizing: border-box;
+  padding: 0 58px 0 15px;
 }
 header .add-btn {
   width: 50px;
