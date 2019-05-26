@@ -9,7 +9,7 @@ var allTasks = []
 
 //FUNCION DE TOGGLE PENDIENTE A COMPLETADA
 var toggleTask = function (button) {
-  //console.log(button.id)
+  console.log(button.id)
   allTasks[button.id].isPending = !allTasks[button.id].isPending
 
   console.log(allTasks[button.id].isPending)
@@ -27,8 +27,8 @@ var printTasks = function () {
   taskCompleted.innerHTML = ''
   allTasks.map(function (task, index) {
     var taskItem = document.createElement('li')
-    //var buttons = document.createElement('div')
-    //buttons.classList.add('buttons')
+    var buttons = document.createElement('div')
+    buttons.classList.add('buttons')
     taskItem.classList.add('task')
     taskItem.innerText = task.text
     if (task.isPending) {
@@ -108,3 +108,4 @@ var deleteTask = function (btn) {
 }
 
 // debugger
+

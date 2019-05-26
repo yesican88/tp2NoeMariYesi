@@ -62,15 +62,18 @@ header .add-btn {
   width: 50px;
   height: 50px;
   background: #fff;
-  border-radius: 50%;
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
   position: absolute;
 }
 header .add-btn:hover {
-  fill: #BC3B69;
+  -webkit-transition: #BC3B69;
+  transition: #BC3B69;
 }
 header .add-btn .add-icon {
   width: 16px;
@@ -79,41 +82,43 @@ header .add-btn .add-icon {
   left: 17px;
 }
 
-a {
-  width: 70px;
-}
-
 .complete {
   width: 50px;
   height: 50px;
   background: #fff;
-  border-radius: 50%;
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
-  border-radius: 5px;
-  background-image: url("../assets/done_icon.svg");
   background-repeat: no-repeat;
   background-position: center center;
+  border-radius: 5px solid #BC3B69;
+  background-image: url("../assets/done_icon.svg");
 }
 .complete:hover {
-  fill: #BC3B69;
+  -webkit-transition: #BC3B69;
+  transition: #BC3B69;
 }
 
 .delete {
   width: 50px;
   height: 50px;
   background: #fff;
-  border-radius: 50%;
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
-  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../assets/remove_icon.svg");
+}
+
+.delete:hover {
+  -webkit-transition: #BC3B69;
+  transition: #BC3B69;
 }
 .delete:hover {
-  fill: #BC3B69;
+  color: #BC3B69;
 }
 
 .notice {
