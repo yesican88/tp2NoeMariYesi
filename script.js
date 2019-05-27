@@ -37,11 +37,7 @@ var printTasks = function () {
     buttons.classList.add('buttons')
     taskItem.classList.add('task')
     taskItem.innerText = task.text
-    if (task.isPending) {
-      pendingTasks.appendChild(taskItem)
-    } else {
-      completedTasks.appendChild(taskItem)
-    }
+
 
     // AGREGAR BOTONES
     var completeBtn = document.createElement('a')
@@ -50,10 +46,6 @@ var printTasks = function () {
     completeBtn.classList.add('complete')
     completeBtn.onclick = function () {
       toggleTask(this)
-      if(completedTasks.children.length > 0){
-        taskItem = document.getElementById('taskItem')
-        completeBtn.classList.add('completedColor')
-      }
     }
     taskItem.appendChild(completeBtn)
 
@@ -65,6 +57,14 @@ var printTasks = function () {
       deleteTask(this)
     }
     taskItem.appendChild(deleteBtn)
+
+    if (task.isPending) {
+      pendingTasks.appendChild(taskItem)
+    } else {
+      completedTasks.appendChild(taskItem)
+      completeBtn.classList.add('completedColor')
+    }
+
   })
 
   if(pendingTasks.children.length > 0) {

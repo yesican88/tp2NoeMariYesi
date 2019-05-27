@@ -163,9 +163,14 @@ hr {
 
 .removeNotice {
     display: none;
-}
-.completedTasks{
-    background-color: #BC3B69;
+} 
+.completedColor{
+    background-image: url('../assets/done_icon_white.svg');
+        background-color: #BC3B69;
+        transition-property: background-color;
+        transition-duration: 0.2s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
 }
 
 #pendingTasks, #completedTasks {
