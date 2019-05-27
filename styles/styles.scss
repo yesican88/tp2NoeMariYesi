@@ -124,6 +124,7 @@ hr {
         transition-timing-function: ease;
         transition-delay: 0s;
     }
+   
 }
 
 .delete {
@@ -162,6 +163,9 @@ hr {
 
 .removeNotice {
     display: none;
+}
+.completedTasks{
+    background-color: #BC3B69;
 }
 
 #pendingTasks, #completedTasks {

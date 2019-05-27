@@ -50,6 +50,10 @@ var printTasks = function () {
     completeBtn.classList.add('complete')
     completeBtn.onclick = function () {
       toggleTask(this)
+      if(completedTasks.children.length > 0){
+        taskItem = document.getElementById('taskItem')
+        completeBtn.classList.add('completedColor')
+      }
     }
     taskItem.appendChild(completeBtn)
 
@@ -77,12 +81,14 @@ var printTasks = function () {
   } else if (completedTasks.children.length === 0) {
     var manyTasks = document.getElementById('manyTasks')
     manyTasks.classList.remove('removeNotice')
-  }
+  } 
+  
 }
 
 // TOGGLE PENDIENTE A COMPLETADA
 var toggleTask = function (button) {
   allTasks[button.id].isPending = !allTasks[button.id].isPending
+  
   printTasks()
 }
 
