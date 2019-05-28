@@ -21,6 +21,13 @@ $color-pink: #BC3B69;
     border-radius: 20px;
 }
 
+@mixin transition {
+    background-color: $color-pink;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -109,22 +116,22 @@ hr {
     margin: 30px auto;
 }
 
+#pendingTasks, #completedTasks {
+    overflow: hidden;
+}
+
 .complete {
     @include buttons;
     @include completeBtn;
     background-image: url('../assets/done_icon.svg');
-    border: 1.5px solid #BC3B69;
+    border: 1.5px solid $color-pink;
     margin: 10px 15px 10px 15px;
 
     &:hover {
         background-image: url('../assets/done_icon_white.svg');
-        background-color: #BC3B69;
-        transition-property: background-color;
-        transition-duration: 0.2s;
-        transition-timing-function: ease;
-        transition-delay: 0s;
+        @include transition;
     }
-   
+
 }
 
 .delete {
@@ -163,16 +170,9 @@ hr {
 
 .removeNotice {
     display: none;
-} 
-.completedColor{
-    background-image: url('../assets/done_icon_white.svg');
-        background-color: #BC3B69;
-        transition-property: background-color;
-        transition-duration: 0.2s;
-        transition-timing-function: ease;
-        transition-delay: 0s;
 }
 
-#pendingTasks, #completedTasks {
-    overflow: hidden;
+.completedColor {
+    background-image: url('../assets/done_icon_white.svg');
+    @include transition;
 }
