@@ -36,7 +36,12 @@ var printTasks = function () {
     taskItem.classList.add('task')
     taskItem.innerText = task.text
 
-    // AGREGAR BOTONES
+    // CONTENEDOR
+    var buttons = document.createElement('div')
+    buttons.classList.add('btn-container')
+    taskItem.appendChild(buttons)
+
+    // BOTONES
     var completeBtn = document.createElement('a')
     completeBtn.id = index
     completeBtn.href = '#'
@@ -44,7 +49,7 @@ var printTasks = function () {
     completeBtn.onclick = function () {
       toggleTask(this)
     }
-    taskItem.appendChild(completeBtn)
+    buttons.appendChild(completeBtn)
 
     var deleteBtn = document.createElement('a')
     deleteBtn.id = index
@@ -53,7 +58,7 @@ var printTasks = function () {
     deleteBtn.onclick = function () {
       deleteTask(this)
     }
-    taskItem.appendChild(deleteBtn)
+    buttons.appendChild(deleteBtn)
 
     if (task.isPending) {
       pendingTasks.appendChild(taskItem)
