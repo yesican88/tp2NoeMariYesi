@@ -4,6 +4,8 @@ var pendingTasks
 var completedTasks
 var allTasks = []
 
+
+
 // AGREGAR TAREAS
 var addTask = function () {
   input = document.getElementById('taskInput')
@@ -37,7 +39,6 @@ var printTasks = function () {
     buttons.classList.add('buttons')
     taskItem.classList.add('task')
     taskItem.innerText = task.text
-
 
     // AGREGAR BOTONES
     var completeBtn = document.createElement('a')
@@ -97,3 +98,9 @@ var deleteTask = function (btn) {
   allTasks.splice(btn.id, 1)
   printTasks()
 }
+
+  //LOCAL STORAGE
+  function localStorage(){
+    localStorage.setItem (JSON.stringify (addTask, handleKeyPress, printTasks, toggleTask, deleteTask))
+  }
+  localStorage()

@@ -21,6 +21,15 @@ $color-pink: #BC3B69;
     border-radius: 20px;
 }
 
+@mixin checkpink {
+    background-image: url('../assets/done_icon_white.svg');
+    background-color: #BC3B69;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -117,12 +126,7 @@ hr {
     margin: 10px 15px 10px 15px;
 
     &:hover {
-        background-image: url('../assets/done_icon_white.svg');
-        background-color: #BC3B69;
-        transition-property: background-color;
-        transition-duration: 0.2s;
-        transition-timing-function: ease;
-        transition-delay: 0s;
+    @include checkpink;
     }
    
 }
@@ -165,12 +169,7 @@ hr {
     display: none;
 } 
 .completedColor{
-    background-image: url('../assets/done_icon_white.svg');
-        background-color: #BC3B69;
-        transition-property: background-color;
-        transition-duration: 0.2s;
-        transition-timing-function: ease;
-        transition-delay: 0s;
+    @include checkpink;
 }
 
 #pendingTasks, #completedTasks {
