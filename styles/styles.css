@@ -40,7 +40,7 @@ body {
 
 header {
   height: 54px;
-  background: #BC3B69;
+  background: #bc3b69;
   padding: 15px;
   border-radius: 10px;
   overflow: hidden;
@@ -90,6 +90,10 @@ hr {
   margin: 30px auto;
 }
 
+#pendingTasks, #completedTasks {
+  overflow: hidden;
+}
+
 .complete {
   width: 50px;
   height: 50px;
@@ -105,16 +109,15 @@ hr {
   margin-right: 8px;
   border-radius: 20px;
   background-image: url("../assets/done_icon.svg");
-  border: 1.5px solid #BC3B69;
+  border: 1.5px solid #bc3b69;
   margin: 10px 15px 10px 15px;
 }
 .complete:hover {
   background-image: url("../assets/done_icon_white.svg");
-  background-color: #BC3B69;
+  background-color: #bc3b69;
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: ease;
-  transition-delay: 0s;
 }
 
 .delete {
@@ -163,15 +166,10 @@ hr {
 
 .completedColor {
   background-image: url("../assets/done_icon_white.svg");
-  background-color: #BC3B69;
+  background-color: #bc3b69;
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: ease;
-  transition-delay: 0s;
-}
-
-#pendingTasks, #completedTasks {
-  overflow: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */

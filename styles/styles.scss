@@ -1,5 +1,6 @@
 // VARIABLES
-$color-pink: #BC3B69;
+$color-pink: #bc3b69;
+$color-bar: #d8e5e0;
 
 // MIXINS
 @mixin buttons {
@@ -21,13 +22,11 @@ $color-pink: #BC3B69;
     border-radius: 20px;
 }
 
-@mixin checkpink {
-    background-image: url('../assets/done_icon_white.svg');
-    background-color: #BC3B69;
+@mixin transition {
+    background-color: $color-pink;
     transition-property: background-color;
     transition-duration: 0.2s;
     transition-timing-function: ease;
-    transition-delay: 0s;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -112,29 +111,34 @@ header {
 hr {
     height: 1px;
     width: 50%;
-    color: #d8e5e0;
-    background-color: #d8e5e0;
+    color: $color-bar;
+    background-color: $color-bar;
     border: none;
     margin: 30px auto;
+}
+
+#pendingTasks, #completedTasks {
+    overflow: hidden;
 }
 
 .complete {
     @include buttons;
     @include completeBtn;
     background-image: url('../assets/done_icon.svg');
-    border: 1.5px solid #BC3B69;
+    border: 1.5px solid $color-pink;
     margin: 10px 15px 10px 15px;
 
     &:hover {
-    @include checkpink;
+        background-image: url('../assets/done_icon_white.svg');
+        @include transition;
     }
-   
+
 }
 
 .delete {
     @include buttons;
     background-image: url('../assets/remove_icon.svg');
-    border-right: solid 1px #d8e5e0;
+    border-right: solid 1px $color-bar;
 
     &:hover {
         background-image: url('../assets/remove_icon_hover.svg');
@@ -167,11 +171,9 @@ hr {
 
 .removeNotice {
     display: none;
-} 
-.completedColor{
-    @include checkpink;
 }
 
-#pendingTasks, #completedTasks {
-    overflow: hidden;
+.completedColor {
+    background-image: url('../assets/done_icon_white.svg');
+    @include transition;
 }
