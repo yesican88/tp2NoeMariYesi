@@ -4,8 +4,6 @@ var pendingTasks
 var completedTasks
 var allTasks = []
 
-
-
 // AGREGAR TAREAS
 var addTask = function () {
   input = document.getElementById('taskInput')
@@ -73,19 +71,19 @@ var printTasks = function () {
   })
 
   if(pendingTasks.children.length > 0) {
-    var zeroTasks = document.getElementById('zeroTasks')
-    zeroTasks.classList.add('removeNotice')
+    var firstNotice = document.getElementById('firstNotice')
+    firstNotice.classList.add('removeNotice')
   } else {
-    var zeroTasks = document.getElementById('zeroTasks')
-    zeroTasks.classList.remove('removeNotice')
+    var firstNotice = document.getElementById('firstNotice')
+    firstNotice.classList.remove('removeNotice')
   }
 
   if (completedTasks.children.length > 0) {
-    var manyTasks = document.getElementById('manyTasks')
-    manyTasks.classList.add('removeNotice')
+    var secondNotice = document.getElementById('secondNotice')
+    secondNotice.classList.add('removeNotice')
   } else {
-    var manyTasks = document.getElementById('manyTasks')
-    manyTasks.classList.remove('removeNotice')
+    var secondNotice = document.getElementById('secondNotice')
+    secondNotice.classList.remove('removeNotice')
   }
 }
 
@@ -100,9 +98,3 @@ var deleteTask = function (btn) {
   allTasks.splice(btn.id, 1)
   printTasks()
 }
-
-  //LOCAL STORAGE
-  function localStorage(){
-    localStorage.setItem (JSON.stringify (addTask, handleKeyPress, printTasks, toggleTask, deleteTask))
-  }
-  localStorage()
