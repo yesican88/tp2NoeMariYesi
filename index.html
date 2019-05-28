@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <script src="script.js" type="text/javascript"></script>
     <title>To-do List</title>
 </head>
-
 <body onload="printTasks()">
     <div class="app-container">
         <header>
@@ -20,14 +18,14 @@
         </header>
         <section>
             <div>
-                <p class="notice" id="zeroTasks">¡No tienes tareas pendientes!</p>
+                <p class="notice" id="firstNotice">¡No tienes tareas pendientes!</p>
                 <ul id="pendingTasks">
 
                 </ul>
             </div>
             <hr>
             <div>
-                <p class="notice" id="manyTasks">Todavía no completaste ninguna tarea.</p>
+                <p class="notice" id="secondNotice">Todavía no completaste ninguna tarea.</p>
                 <ul id="completedTasks">
 
                 </ul>
@@ -35,5 +33,4 @@
         </div>
     </div>
 </body>
-
 </html>

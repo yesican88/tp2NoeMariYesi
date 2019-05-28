@@ -33,21 +33,25 @@ var printTasks = function () {
   completedTasks.innerHTML = ''
   allTasks.map(function (task, index) {
     var taskItem = document.createElement('li')
-    var buttons = document.createElement('div')
-    buttons.classList.add('buttons')
     taskItem.classList.add('task')
     taskItem.innerText = task.text
 
+    // CONTENEDOR
+    var buttons = document.createElement('div')
+    buttons.classList.add('btn-container')
+    taskItem.appendChild(buttons)
 
-    // AGREGAR BOTONES
+    // BOTONES
     var completeBtn = document.createElement('a')
+    btn = document.createElement ('div')
+    taskItem.appendChild(btn)
     completeBtn.id = index
     completeBtn.href = '#'
     completeBtn.classList.add('complete')
     completeBtn.onclick = function () {
       toggleTask(this)
     }
-    taskItem.appendChild(completeBtn)
+    buttons.appendChild(completeBtn)
 
     var deleteBtn = document.createElement('a')
     deleteBtn.id = index
@@ -56,7 +60,7 @@ var printTasks = function () {
     deleteBtn.onclick = function () {
       deleteTask(this)
     }
-    taskItem.appendChild(deleteBtn)
+    buttons.appendChild(deleteBtn)
 
     if (task.isPending) {
       pendingTasks.appendChild(taskItem)
@@ -64,31 +68,28 @@ var printTasks = function () {
       completedTasks.appendChild(taskItem)
       completeBtn.classList.add('completedColor')
     }
-
   })
 
   if(pendingTasks.children.length > 0) {
-    var zeroTasks = document.getElementById('zeroTasks')
-    zeroTasks.classList.add('removeNotice')
-  } else if (pendingTasks.children.length === 0){
-    var zeroTasks = document.getElementById('zeroTasks')
-    zeroTasks.classList.remove('removeNotice')
+    var firstNotice = document.getElementById('firstNotice')
+    firstNotice.classList.add('removeNotice')
+  } else {
+    var firstNotice = document.getElementById('firstNotice')
+    firstNotice.classList.remove('removeNotice')
   }
 
   if (completedTasks.children.length > 0) {
-    var manyTasks = document.getElementById('manyTasks')
-    manyTasks.classList.add('removeNotice')
-  } else if (completedTasks.children.length === 0) {
-    var manyTasks = document.getElementById('manyTasks')
-    manyTasks.classList.remove('removeNotice')
-  } 
-  
+    var secondNotice = document.getElementById('secondNotice')
+    secondNotice.classList.add('removeNotice')
+  } else {
+    var secondNotice = document.getElementById('secondNotice')
+    secondNotice.classList.remove('removeNotice')
+  }
 }
 
 // TOGGLE PENDIENTE A COMPLETADA
 var toggleTask = function (button) {
   allTasks[button.id].isPending = !allTasks[button.id].isPending
-  
   printTasks()
 }
 

@@ -40,7 +40,7 @@ body {
 
 header {
   height: 54px;
-  background: #BC3B69;
+  background: #bc3b69;
   padding: 15px;
   border-radius: 10px;
   overflow: hidden;
@@ -90,6 +90,10 @@ hr {
   margin: 30px auto;
 }
 
+#pendingTasks, #completedTasks {
+  overflow: hidden;
+}
+
 .complete {
   width: 50px;
   height: 50px;
@@ -105,16 +109,15 @@ hr {
   margin-right: 8px;
   border-radius: 20px;
   background-image: url("../assets/done_icon.svg");
-  border: 1.5px solid #BC3B69;
+  border: 1.5px solid #bc3b69;
   margin: 10px 15px 10px 15px;
 }
 .complete:hover {
   background-image: url("../assets/done_icon_white.svg");
-  background-color: #BC3B69;
+  background-color: #bc3b69;
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: ease;
-  transition-delay: 0s;
 }
 
 .delete {
@@ -144,17 +147,16 @@ hr {
 }
 
 .task {
-  width: 100%;
   min-height: 50px;
   font-size: 14px;
-  line-height: 50px;
+  line-height: 22px;
   background: #fff;
   border-radius: 5px;
   position: relative;
   box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
   margin: 0 0 10px 0;
-  padding: 10px 0px;
-  text-indent: 15px;
+  padding: 10px 110px 10px 15px;
+  text-align: justify;
 }
 
 .removeNotice {
@@ -163,15 +165,17 @@ hr {
 
 .completedColor {
   background-image: url("../assets/done_icon_white.svg");
-  background-color: #BC3B69;
+  background-color: #bc3b69;
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: ease;
-  transition-delay: 0s;
 }
 
-#pendingTasks, #completedTasks {
+.btn-container {
   overflow: hidden;
+  position: absolute;
+  top: 10px;
+  right: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
