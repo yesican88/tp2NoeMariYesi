@@ -1,3 +1,26 @@
+// VARIABLES
+$color-pink: #BC3B69;
+
+// MIXINS
+@mixin buttons {
+    width: 50px;
+    height: 50px;
+    float: right;
+    top: 16px;
+    right: 14px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin completeBtn {
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 8px;
+    border-radius: 20px;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,30 +34,13 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
     list-style: none;
-}
-
-$color-pink: #BC3B69;
-
-@mixin buttons {
-    width: 50px;
-    height: 50px;
-    background:#fff;
-    float: right;
-    top: 16px;
-    right: 14px;
-    z-index: 2;
-    background-repeat: no-repeat;
-    background-position: center center;
-    &:hover{
-        transition: $color-pink;
-    }
 }
 
 body {
@@ -46,6 +52,7 @@ body {
     width: 75%;
     height: 90%;
     max-width: 600px;
+    min-width: 420px;
     margin: auto;
     position: absolute;
     top: 0;
@@ -54,14 +61,13 @@ body {
     right: 0;
 }
 
-// ESTILOS DEL HEADER
-
 header {
     height: 54px;
     background: $color-pink;
     padding: 15px;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 20px;
 
     input {
         width: 100%;
@@ -75,13 +81,16 @@ header {
         font-size: 15px;
         color: #fff;
         float: left;
-        text-indent: 15px;
+        box-sizing: border-box;
+        padding: 0 58px 0 15px;
     }
 
     .add-btn {
         @include buttons;
         border-radius: 50%;
         position: absolute;
+        background-color: #fff;
+
         .add-icon {
             width: 16px;
             position: absolute;
@@ -91,41 +100,58 @@ header {
     }
 }
 
-// ^ESTILOS DEL HEADER^
+hr {
+    height: 1px;
+    width: 50%;
+    color: #d8e5e0;
+    background-color: #d8e5e0;
+    border: none;
+    margin: 30px auto;
+}
 
-//^ESTILOS DEL INPUT^
-
-.complete{
+.complete {
     @include buttons;
-    border-radius: 5px solid $color-pink;
+    @include completeBtn;
     background-image: url('../assets/done_icon.svg');
+    border: 1.5px solid #BC3B69;
+    margin: 10px 15px 10px 15px;
 
+    &:hover {
+        background-image: url('../assets/done_icon_white.svg');
+        background-color: #BC3B69;
+        transition-property: background-color;
+        transition-duration: 0.2s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
     }
-.delete{
+   
+}
+
+.delete {
     @include buttons;
     background-image: url('../assets/remove_icon.svg');
-    &:hover{
-        color: $color-pink;
-        }
-    }
+    border-right: solid 1px #d8e5e0;
 
-.notice{
-    margin: 30px auto;
+    &:hover {
+        background-image: url('../assets/remove_icon_hover.svg');
+    }
+}
+
+.notice {
+    margin-top: 30px;
     width: 100%;
     display: block;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
-    color: #aaa;      
+    color: #aaa;
 }
-.task{
+
+.task {
     width: 100%;
     min-height: 50px;
-    float: left;
     font-size: 14px;
-    font-weight: 500;
-    color: #444;
-    line-height: 22px;
+    line-height: 50px;
     background: #fff;
     border-radius: 5px;
     position: relative;
@@ -133,4 +159,20 @@ header {
     margin: 0 0 10px 0;
     padding: 10px 0px;
     text-indent: 15px;
+}
+
+.removeNotice {
+    display: none;
+} 
+.completedColor{
+    background-image: url('../assets/done_icon_white.svg');
+        background-color: #BC3B69;
+        transition-property: background-color;
+        transition-duration: 0.2s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+}
+
+#pendingTasks, #completedTasks {
+    overflow: hidden;
 }

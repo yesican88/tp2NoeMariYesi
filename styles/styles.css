@@ -21,7 +21,7 @@ time, mark, audio, video {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: #edf0f1;
 }
 
@@ -29,6 +29,7 @@ body {
   width: 75%;
   height: 90%;
   max-width: 600px;
+  min-width: 420px;
   margin: auto;
   position: absolute;
   top: 0;
@@ -43,8 +44,8 @@ header {
   padding: 15px;
   border-radius: 10px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
-
 header input {
   width: 100%;
   height: 50px;
@@ -57,28 +58,22 @@ header input {
   font-size: 15px;
   color: #fff;
   float: left;
-  text-indent: 15px;
+  box-sizing: border-box;
+  padding: 0 58px 0 15px;
 }
-
 header .add-btn {
   width: 50px;
   height: 50px;
-  background: #fff;
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   border-radius: 50%;
   position: absolute;
+  background-color: #fff;
 }
-
-header .add-btn:hover {
-  -webkit-transition: #BC3B69;
-  transition: #BC3B69;
-}
-
 header .add-btn .add-icon {
   width: 16px;
   position: absolute;
@@ -86,53 +81,64 @@ header .add-btn .add-icon {
   left: 17px;
 }
 
+hr {
+  height: 1px;
+  width: 50%;
+  color: #d8e5e0;
+  background-color: #d8e5e0;
+  border: none;
+  margin: 30px auto;
+}
+
 .complete {
   width: 50px;
   height: 50px;
-  background: #fff;
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
-  background-position: center center;
-  border-radius: 5px solid #BC3B69;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 20px;
   background-image: url("../assets/done_icon.svg");
+  border: 1.5px solid #BC3B69;
+  margin: 10px 15px 10px 15px;
 }
-
 .complete:hover {
-  -webkit-transition: #BC3B69;
-  transition: #BC3B69;
+  background-image: url("../assets/done_icon_white.svg");
+  background-color: #BC3B69;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .delete {
   width: 50px;
   height: 50px;
-  background: #fff;
   float: right;
   top: 16px;
   right: 14px;
   z-index: 2;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-image: url("../assets/remove_icon.svg");
+  border-right: solid 1px #d8e5e0;
 }
-
 .delete:hover {
-  -webkit-transition: #BC3B69;
-  transition: #BC3B69;
-}
-
-.delete:hover {
-  color: #BC3B69;
+  background-image: url("../assets/remove_icon_hover.svg");
 }
 
 .notice {
-  margin: 30px auto;
+  margin-top: 30px;
   width: 100%;
   display: block;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   color: #aaa;
 }
@@ -140,18 +146,32 @@ header .add-btn .add-icon {
 .task {
   width: 100%;
   min-height: 50px;
-  float: left;
   font-size: 14px;
-  font-weight: 500;
-  color: #444;
-  line-height: 22px;
+  line-height: 50px;
   background: #fff;
   border-radius: 5px;
   position: relative;
-  -webkit-box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
-          box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.1);
   margin: 0 0 10px 0;
   padding: 10px 0px;
   text-indent: 15px;
 }
+
+.removeNotice {
+  display: none;
+}
+
+.completedColor {
+  background-image: url("../assets/done_icon_white.svg");
+  background-color: #BC3B69;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+#pendingTasks, #completedTasks {
+  overflow: hidden;
+}
+
 /*# sourceMappingURL=styles.css.map */
