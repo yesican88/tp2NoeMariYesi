@@ -35,13 +35,13 @@ var printTasks = function () {
   completedTasks.innerHTML = ''
   allTasks.map(function (task, index) {
     var taskItem = document.createElement('li')
-    //var buttons = document.createElement('div')
-    //buttons.classList.add('buttons')
     taskItem.classList.add('task')
     taskItem.innerText = task.text
 
     // AGREGAR BOTONES
     var completeBtn = document.createElement('a')
+    btn = document.createElement ('div')
+    taskItem.appendChild(btn)
     completeBtn.id = index
     completeBtn.href = '#'
     completeBtn.classList.add('complete')
@@ -49,6 +49,7 @@ var printTasks = function () {
       toggleTask(this)
     }
     taskItem.appendChild(completeBtn)
+    
 
     var deleteBtn = document.createElement('a')
     deleteBtn.id = index
