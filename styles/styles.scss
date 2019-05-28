@@ -1,5 +1,6 @@
 // VARIABLES
-$color-pink: #BC3B69;
+$color-pink: #bc3b69;
+$color-bar: #d8e5e0;
 
 // MIXINS
 @mixin buttons {
@@ -110,8 +111,8 @@ header {
 hr {
     height: 1px;
     width: 50%;
-    color: #d8e5e0;
-    background-color: #d8e5e0;
+    color: $color-bar;
+    background-color: $color-bar;
     border: none;
     margin: 30px auto;
 }
@@ -137,7 +138,7 @@ hr {
 .delete {
     @include buttons;
     background-image: url('../assets/remove_icon.svg');
-    border-right: solid 1px #d8e5e0;
+    border-right: solid 1px $color-bar;
 
     &:hover {
         background-image: url('../assets/remove_icon_hover.svg');

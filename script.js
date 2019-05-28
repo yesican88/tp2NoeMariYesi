@@ -80,8 +80,7 @@ var printTasks = function () {
   } else {
     var manyTasks = document.getElementById('manyTasks')
     manyTasks.classList.remove('removeNotice')
-  } 
-  
+  }
 }
 
 // TOGGLE PENDIENTE A COMPLETADA
