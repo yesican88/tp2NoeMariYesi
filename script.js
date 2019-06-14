@@ -26,6 +26,7 @@ var handleKeyPress = function (event) {
 }
 
 // IMPRIMIR TAREAS
+// la función es demasiado extensa, se podria sacar mucho a funciones independientes
 var printTasks = function () {
   pendingTasks = document.getElementById('pendingTasks')
   pendingTasks.innerHTML = ''
@@ -36,12 +37,12 @@ var printTasks = function () {
     taskItem.classList.add('task')
     taskItem.innerText = task.text
 
-    // CONTENEDOR
+    // CONTENEDOR --> debio ser una función independiente  
     var buttons = document.createElement('div')
     buttons.classList.add('btn-container')
     taskItem.appendChild(buttons)
-
-    // BOTONES
+ 
+    // BOTONES --> debio ser una función independiente
     var completeBtn = document.createElement('a')
     btn = document.createElement ('div')
     taskItem.appendChild(btn)
@@ -52,7 +53,8 @@ var printTasks = function () {
       toggleTask(this)
     }
     buttons.appendChild(completeBtn)
-
+  
+    // BOTONES --> debio ser una función independiente
     var deleteBtn = document.createElement('a')
     deleteBtn.id = index
     deleteBtn.href = '#'
@@ -70,6 +72,7 @@ var printTasks = function () {
     }
   })
 
+  // --> debio ser una función independiente
   if(pendingTasks.children.length > 0) {
     var firstNotice = document.getElementById('firstNotice')
     firstNotice.classList.add('removeNotice')
@@ -78,6 +81,7 @@ var printTasks = function () {
     firstNotice.classList.remove('removeNotice')
   }
 
+  // --> debio ser una función independiente  
   if (completedTasks.children.length > 0) {
     var secondNotice = document.getElementById('secondNotice')
     secondNotice.classList.add('removeNotice')
