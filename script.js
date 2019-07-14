@@ -1,13 +1,9 @@
-var input
-var newTask
-var pendingTasks
-var completedTasks
-var allTasks = []
+let allTasks = []
 
 // AGREGAR TAREAS
-var addTask = function () {
-  input = document.getElementById('taskInput')
-  newTask = input.value
+const addTask = () => {
+  let input = document.getElementById('taskInput')
+  let newTask = input.value
 
   if (input.value !== "") {
     input.value = ''
@@ -16,46 +12,59 @@ var addTask = function () {
       isPending: true
     })
   }
+
+  let parsedData = JSON.stringify(allTasks)
+  window.localStorage.setItem('tasks', parsedData)
   printTasks()
 }
 
-var handleKeyPress = function (event) {
+const handleKeyPress = (event) => {
   if (event.code === 'Enter') {
     addTask()
   }
 }
 
+// TOGGLE PENDIENTE A COMPLETADA
+const toggleTask = (button) => {
+  allTasks[button.id].isPending = !allTasks[button.id].isPending
+  printTasks()
+}
+
 // IMPRIMIR TAREAS
-var printTasks = function () {
-  pendingTasks = document.getElementById('pendingTasks')
+const printTasks = () => {
+  let pendingTasks = document.getElementById('pendingTasks')
   pendingTasks.innerHTML = ''
-  completedTasks = document.getElementById('completedTasks')
+  let completedTasks = document.getElementById('completedTasks')
   completedTasks.innerHTML = ''
-  allTasks.map(function (task, index) {
-    var taskItem = document.createElement('li')
+
+  createButtons()
+  displayNotice()
+}
+
+const createButtons = () => {
+  allTasks.map((task, index) => {
+    let taskItem = document.createElement('li')
     taskItem.classList.add('task')
     taskItem.innerText = task.text
 
-    // CONTENEDOR
-    var buttons = document.createElement('div')
+    let buttons = document.createElement('div')
     buttons.classList.add('btn-container')
     taskItem.appendChild(buttons)
 
-    // BOTONES
-    var completeBtn = document.createElement('a')
+    let completeBtn = document.createElement('a')
     btn = document.createElement ('div')
     taskItem.appendChild(btn)
-    completeBtn.id = index
     completeBtn.href = '#'
+    completeBtn.id = index
     completeBtn.classList.add('complete')
     completeBtn.onclick = function () {
       toggleTask(this)
     }
     buttons.appendChild(completeBtn)
-
-    var deleteBtn = document.createElement('a')
-    deleteBtn.id = index
+  
+    let deleteBtn = document.createElement('a')
     deleteBtn.href = '#'
+    deleteBtn.id = index
     deleteBtn.classList.add('delete')
     deleteBtn.onclick = function () {
       deleteTask(this)
@@ -69,32 +78,35 @@ var printTasks = function () {
       completeBtn.classList.add('completedColor')
     }
   })
+}
 
+// MOSTRAR U OCULTAR AVISOS
+const displayNotice = () => {
   if(pendingTasks.children.length > 0) {
-    var firstNotice = document.getElementById('firstNotice')
+    let firstNotice = document.getElementById('firstNotice')
     firstNotice.classList.add('removeNotice')
   } else {
-    var firstNotice = document.getElementById('firstNotice')
     firstNotice.classList.remove('removeNotice')
   }
 
   if (completedTasks.children.length > 0) {
-    var secondNotice = document.getElementById('secondNotice')
+    let secondNotice = document.getElementById('secondNotice')
     secondNotice.classList.add('removeNotice')
   } else {
-    var secondNotice = document.getElementById('secondNotice')
     secondNotice.classList.remove('removeNotice')
   }
 }
 
-// TOGGLE PENDIENTE A COMPLETADA
-var toggleTask = function (button) {
-  allTasks[button.id].isPending = !allTasks[button.id].isPending
-  printTasks()
-}
-
 // ELIMINAR TAREA
-var deleteTask = function (btn) {
+const deleteTask = (btn) => {
   allTasks.splice(btn.id, 1)
   printTasks()
 }
+
+// LOCAL STORAGE
+const checkStorage = () => {
+  let aux = window.localStorage.getItem('tasks')
+  allTasks = aux ? JSON.parse(aux) : allTasks // localStorage maneja texto, JS maneja datos -> stringify y después parse
+}
+
+checkStorage()
